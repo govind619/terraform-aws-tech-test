@@ -51,6 +51,10 @@ EOF
 
 }
 
+resource "aws_eip" "ip" {
+  instance = aws_instance.web-instance.id
+}
+
 resource "aws_security_group" "web-instance-security-group" {
   vpc_id = aws_vpc.vpc.id
 
